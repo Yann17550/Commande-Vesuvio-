@@ -1,27 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dolus & Vesuvio - Commande Tactile</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesuvio - Commande Table</title>
+  
+  <!-- CSS séparés -->
+  /reset.css">
+  /layout.css">
+  /header.css">
+  /tabs.css">
+  /menu-items.css">
+  /order-button.css">
+  /ticket.css">
 </head>
 <body>
+  <!-- Header -->
+  <div id="header-container"></div>
 
-    <header class="app-header">
-        <h1>🍕 Dolus & Vesuvio</h1>
-        <p>Pizzeria Oléron - Commande Tactile</p>
-    </header>
+  <!-- Tabs -->
+  <div id="tabs-container"></div>
 
-    <nav class="category-tabs">
-        <button class="tab-btn active" data-category="Pizzas">Pizzas</button>
-        <button class="tab-btn" data-category="Boissons">Boissons</button>
-        <button class="tab-btn" data-category="Desserts">Desserts</button>
-    </nav>
+  <!-- Menu -->
+  <main class="menu-container">
+    <section class="category active" id="pizzas"></section>
+    <section class="category" id="boissons"></section>
+    <section class="category" id="desserts"></section>
+  </main>
 
-    <main class="menu-container" id="menu-container">
-        </main>
+  <!-- Bouton Commander -->
+  <button class="order-button" id="orderBtn">
+    <span id="orderBtnText">Commander</span>
+  </button>
 
-    <script src="script.js"></script>
+  <!-- Ticket Cuisine -->
+  <div class="ticket" id="ticketModal">
+    <div class="ticket-content" id="ticketContent"></div>
+  </div>
+
+  <!-- JS séparés -->
+  <script src="js/config.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/menu-items.js"></script>
+  <script src="js/order.js"></script>
+  <script src="js/ticket.js"></script>
+  <script>
+    // Initialisation au chargement
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Charger les composants HTML
+      await loadComponent('header-container', 'components/header.html');
+      await loadComponent('tabs-container', 'components/tabs.html');
+      await loadComponent('pizzas', 'components/pizzas.html');
+      await loadComponent('boissons', 'components/boissons.html');
+      await loadComponent('desserts', 'components/desserts.html');
+      
+      // Initialiser les modules
+      initTabs();
+      initMenuItems();
+      initOrder();
+    });
+
+    // Fonction pour charger composants HTML
+    async function loadComponent(containerId, file) {
+      try {
+        const response = await fetch(file);
+        const html = await response.text();
+        document.getElementById(containerId).innerHTML = html;
+      } catch (error) {
+        console.error(`Erreur chargement ${file}:`, error);
+      }
+    }
+  </script>
 </body>
 </html>
