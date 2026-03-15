@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vesuvio - Commande Table</title>
   
-  <!-- CSS séparés -->
-  /reset.css">
-  /layout.css">
-  /header.css">
-  /tabs.css">
-  /menu-items.css">
-  /order-button.css">
-  /ticket.css">
+  <!-- CSS séparés avec chemins corrects -->
+  /CSS - css/reset.css">
+  /CSS - css/layout.css">
+  /CSS - css/header.css">
+  /CSS - css/tabs.css">
+  /CSS - css/menu-items.css">
+  /CSS - css/order-button.css">
+  /CSS - css/ticket.css">
 </head>
 <body>
   <!-- Header -->
@@ -38,21 +38,21 @@
     <div class="ticket-content" id="ticketContent"></div>
   </div>
 
-  <!-- JS séparés -->
-  <script src="js/config.js"></script>
-  <script src="js/tabs.js"></script>
-  <script src="js/menu-items.js"></script>
-  <script src="js/order.js"></script>
-  <script src="js/ticket.js"></script>
+  <!-- JS séparés avec chemins corrects -->
+  <script src="./JS - js/config.js"></script>
+  <script src="./JS - js/tabs.js"></script>
+  <script src="./JS - js/menu-items.js"></script>
+  <script src="./JS - js/order.js"></script>
+  <script src="./JS - js/ticket.js"></script>
   <script>
     // Initialisation au chargement
     document.addEventListener('DOMContentLoaded', async function() {
-      // Charger les composants HTML
-      await loadComponent('header-container', 'components/header.html');
-      await loadComponent('tabs-container', 'components/tabs.html');
-      await loadComponent('pizzas', 'components/pizzas.html');
-      await loadComponent('boissons', 'components/boissons.html');
-      await loadComponent('desserts', 'components/desserts.html');
+      // Charger les composants HTML avec chemins corrects
+      await loadComponent('header-container', './header.html');
+      await loadComponent('tabs-container', './tabs.html');
+      await loadComponent('pizzas', './pizzas.html');
+      await loadComponent('boissons', './boissons.html');
+      await loadComponent('desserts', './desserts.html');
       
       // Initialiser les modules
       initTabs();
