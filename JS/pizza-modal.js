@@ -3,16 +3,9 @@ let currentPizza = null;
 let basePrice = 0;
 
 function initPizzaModal() {
-  // Modifier le comportement des clics sur les pizzas
-  const pizzasSection = document.getElementById('pizzas');
-  
-  pizzasSection.addEventListener('click', function(e) {
-    const menuItem = e.target.closest('.menu-item');
-    if (menuItem) {
-      e.stopPropagation();
-      openPizzaModal(menuItem);
-    }
-  });
+  // NE PLUS gérer le clic sur les pizzas ici
+  // Le clic normal gère la sélection + spinner
+  // Seul le bouton "Personnaliser" ouvre le modal
   
   // Gérer les clics sur les options de base
   document.querySelectorAll('.base-option').forEach(option => {
@@ -116,7 +109,7 @@ function addPizzaToCart() {
   
   const finalPrice = parseFloat(document.getElementById('modal-price').textContent);
   
-  console.log('Pizza ajoutée au panier:', {
+  console.log('Pizza personnalisée ajoutée:', {
     pizza: currentPizza.name,
     base: base,
     supplements: supplements,
@@ -124,8 +117,7 @@ function addPizzaToCart() {
     price: finalPrice
   });
   
-  // TODO: Ajouter au panier réel
-  alert(`${currentPizza.emoji} ${currentPizza.name} ajoutée ! Prix: ${finalPrice}€`);
+  alert(`${currentPizza.emoji} ${currentPizza.name} personnalisée ajoutée ! Prix: ${finalPrice}€`);
   
   closePizzaModal();
 }
