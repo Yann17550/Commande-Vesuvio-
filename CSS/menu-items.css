@@ -27,7 +27,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  gap: 8px;
+  gap: 0;
 }
 
 .menu-item:active {
@@ -39,10 +39,9 @@
   box-shadow: 0 12px 35px rgba(255,107,53,0.4);
   background: linear-gradient(135deg, #fff5f0, #ffe9e0);
   border: 2px solid #ff6b35;
-  padding-bottom: 20px;
 }
 
-/* Ligne principale: Prix + Nom + Spinner */
+/* Ligne principale: Prix + Nom */
 .item-main {
   display: flex;
   align-items: flex-start;
@@ -88,9 +87,48 @@
   line-height: 1.4;
 }
 
-/* Spinner VERTICAL - Aligné avec le bouton */
-.quantity {
+/* Ligne actions - Bouton + Spinner CÔTE À CÔTE */
+.actions-row {
   display: none;
+  flex-direction: row;  /* ✅ HORIZONTAL */
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.menu-item.selected .actions-row {
+  display: flex;
+}
+
+/* Pour les boissons sans bouton - spinner à droite */
+.menu-item:not(.has-customize) .actions-row {
+  justify-content: flex-end;
+}
+
+/* Bouton Personnaliser - À gauche */
+.customize-btn {
+  flex: 1;
+  background: rgba(255,107,53,0.15);
+  color: #d63031;
+  border: 2px solid rgba(255,107,53,0.3);
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.customize-btn:active {
+  transform: scale(0.97);
+  background: rgba(255,107,53,0.25);
+}
+
+/* Spinner VERTICAL - À droite */
+.quantity {
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
@@ -98,12 +136,6 @@
   padding: 6px;
   border-radius: 12px;
   flex-shrink: 0;
-  margin-top: 8px;  /* ✅ Même margin que le bouton pour alignement */
-  align-self: flex-start;  /* ✅ Aligné en haut */
-}
-
-.menu-item.selected .quantity {
-  display: flex;
 }
 
 .quantity button {
@@ -134,32 +166,6 @@
   min-width: 28px;
   text-align: center;
   padding: 4px 0;
-}
-
-/* Bouton Personnaliser - Caché par défaut, visible après sélection */
-.customize-btn {
-  display: none;
-  background: rgba(255,107,53,0.15);
-  color: #d63031;
-  border: 2px solid rgba(255,107,53,0.3);
-  padding: 12px 16px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  flex: 1;  /* ✅ Prend l'espace disponible à gauche du spinner */
-  margin-top: 8px;
-  white-space: nowrap;
-}
-
-.menu-item.selected.has-customize .customize-btn {
-  display: block;
-}
-
-.customize-btn:active {
-  transform: scale(0.97);
-  background: rgba(255,107,53,0.25);
 }
 
 /* Responsive */
