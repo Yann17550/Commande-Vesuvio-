@@ -1,5 +1,10 @@
 // Gestion de la modal dessert
 let currentDessertElement = null;
+// Fonction d'initialisation
+
+function initDessertModal() {
+  console.log('Modal dessert initialisée');
+}
 
 function openDessertModal(element) {
   currentDessertElement = element;
