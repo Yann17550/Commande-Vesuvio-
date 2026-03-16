@@ -116,43 +116,50 @@
   font-weight: 400;
 }
 
-/* Bouton personnaliser pizza /
+/* Bouton personnaliser pizza - CORRIGÉ */
 .customize-btn {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  top: 12px;
+  right: 12px;
   background: linear-gradient(135deg, #ff8c42, #ff6b35);
   color: white;
   border: none;
-  padding: 8px 15px;
-  font-size: 12px;
+  padding: 6px 12px;
+  font-size: 11px;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
-  box-shadow: 0 3px 10px rgba(255,107,53,0.3);
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(255,107,53,0.3);
   transition: all 0.2s ease;
-  z-index: 5;
+  z-index: 10;
 }
 
 .customize-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+  box-shadow: 0 4px 12px rgba(255,107,53,0.4);
 }
 
 .customize-btn:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
-/* Pas besoin d'ajuster le padding */
+/* Spinner - Position corrigée pour éviter le chevauchement */
+.menu-item .quantity {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+
+/* Ajuster le prix pour laisser de la place au spinner */
+.menu-item .price {
+  margin-right: 90px;
+}
+
+/* Carte pizza avec bouton personnaliser */
 .menu-item.has-customize {
   position: relative;
-}
-
-
-/* Ajuster l'espacement pour le bouton */
-.menu-item.has-customize {
-  padding-bottom: 55px;
+  padding-right: 20px;
 }
