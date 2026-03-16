@@ -1,0 +1,79 @@
+<div class="pizza-modal" id="pizzaModal">
+  <div class="pizza-modal-content">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closePizzaModal()">×</button>
+      <h2>
+        <span id="modal-emoji">🍕</span>
+        <span id="modal-name">Pizza</span>
+      </h2>
+      <p class="pizza-description" id="modal-description"></p>
+      <div class="modal-price" id="modal-price">11.00€</div>
+    </div>
+
+    <div class="modal-body">
+      <!-- Section: Choix de la base -->
+      <div class="option-section">
+        <h3>🍞 Base</h3>
+        <div class="base-options">
+          <div class="base-option selected">
+            <input type="radio" name="base" value="tomate" checked id="base-tomate">
+            abel for="base-tomate">Tomate (classique)</label>
+          </div>
+          <div class="base-option">
+            <input type="radio" name="base" value="creme" id="base-creme">
+            abel for="base-creme">Crème fraîche</label>
+          </div>
+          <div class="base-option">
+            <input type="radio" name="base" value="blanche" id="base-blanche">
+            abel for="base-blanche">Blanche (sans sauce)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Suppléments -->
+      <div class="option-section">
+        <h3>➕ Suppléments</h3>
+        <div class="supplements-grid">
+          <div class="supplement-item" data-supplement="jambon" data-price="1.50">
+            <input type="checkbox" id="supp-jambon">
+            <div class="supplement-emoji">🥓</div>
+            <div class="supplement-name">Jambon</div>
+            <div class="supplement-price">+1.50€</div>
+          </div>
+          <div class="supplement-item" data-supplement="champignons" data-price="1.00">
+            <input type="checkbox" id="supp-champignons">
+            <div class="supplement-emoji">🍄</div>
+            <div class="supplement-name">Champignons</div>
+            <div class="supplement-price">+1.00€</div>
+          </div>
+          <div class="supplement-item" data-supplement="chevre" data-price="2.00">
+            <input type="checkbox" id="supp-chevre">
+            <div class="supplement-emoji">🧀</div>
+            <div class="supplement-name">Chèvre</div>
+            <div class="supplement-price">+2.00€</div>
+          </div>
+          <div class="supplement-item" data-supplement="oeuf" data-price="1.00">
+            <input type="checkbox" id="supp-oeuf">
+            <div class="supplement-emoji">🥚</div>
+            <div class="supplement-name">Œuf</div>
+            <div class="supplement-price">+1.00€</div>
+          </div>
+          <div class="supplement-item" data-supplement="olives" data-price="1.00">
+            <input type="checkbox" id="supp-olives">
+            <div class="supplement-emoji">🫒</div>
+            <div class="supplement-name">Olives</div>
+            <div class="supplement-price">+1.00€</div>
+          </div>
+          <div class="supplement-item" data-supplement="chorizo" data-price="2.00">
+            <input type="checkbox" id="supp-chorizo">
+            <div class="supplement-emoji">🌶️</div>
+            <div class="supplement-name">Chorizo</div>
+            <div class="supplement-price">+2.00€</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Retirer des ingrédients -->
+      <div class="option-section">
+        <h3>➖ Retirer un ingrédient</h3>
+        <div class="ingredients-remove
