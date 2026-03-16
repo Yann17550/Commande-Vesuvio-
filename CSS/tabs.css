@@ -20,12 +20,12 @@
   transition: all 0.3s ease;
   min-height: 60px;
   border-radius: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.3); 
+  /* border: 2px solid rgba(255, 255, 255, 0.3); */
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2); /* Ombre légère */
 }
 
 .tab-btn.active {
-  background: rgba(214, 48, 49, 0.9);  /* ✅ Orange SOUTENU (rouge-orange foncé) */
+  background: rgba(255, 140, 66, 0.8);  /* ✅ Orange 
   color: white;  /* ✅ Blanc pur */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  /* ✅ Ombre forte */
   transform: translateY(-2px);
@@ -34,7 +34,7 @@
 }
 
 .tab-btn:hover:not(.active) {
-  background: rgba(255, 140, 66, 0.5);  /* ✅ Orange un peu plus visible au survol */
+  background: rgba(255, 140, 66, 0.5); 
   color: rgba(255, 255, 255, 0.9);
   transform: translateY(-1px);
 }
