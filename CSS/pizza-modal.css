@@ -1,0 +1,248 @@
+/* Modal de personnalisation pizza */
+.pizza-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 3000;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.pizza-modal.show {
+  display: flex;
+}
+
+.pizza-modal-content {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  border-radius: 30px 30px 0 0;
+  overflow-y: auto;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Header du modal */
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 25px 20px;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.modal-header h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pizza-description {
+  font-size: 14px;
+  opacity: 0.95;
+  margin-top: 5px;
+}
+
+.modal-price {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Corps du modal */
+.modal-body {
+  padding: 20px;
+}
+
+.option-section {
+  margin-bottom: 30px;
+}
+
+.option-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Options de base (radio) */
+.base-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.base-option {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.base-option input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  accent-color: #ff6b35;
+}
+
+.base-option.selected {
+  background: #ffe5d9;
+  border-color: #ff6b35;
+}
+
+.base-option label {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Suppléments (checkbox) */
+.supplements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.supplement-item {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 12px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 90px;
+}
+
+.supplement-item.selected {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.supplement-item input[type="checkbox"] {
+  display: none;
+}
+
+.supplement-emoji {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.supplement-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.supplement-price {
+  font-size: 13px;
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+/* Ingrédients à retirer */
+.ingredients-remove {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ingredient-chip {
+  background: #ffebee;
+  border: 2px solid transparent;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ingredient-chip.removed {
+  background: #ef5350;
+  color: white;
+  border-color: #c62828;
+  text-decoration: line-through;
+}
+
+/* Footer du modal */
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 20px;
+  border-top: 2px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-add-to-cart {
+  flex: 1;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #666;
+  border: none;
+  padding: 18px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+}
