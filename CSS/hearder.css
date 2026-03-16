@@ -1,0 +1,53 @@
+/* Header */
+header {
+  text-align: center;
+  padding: 20px 15px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #d63031;
+}
+
+header p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Sélecteur de table */
+.table-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.table-selector label {
+  font-weight: 600;
+  color: #333;
+}
+
+.table-selector select {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 2px solid #ff6b35;
+  border-radius: 10px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.table-selector select:focus {
+  outline: none;
+  border-color: #d63031;
+}
