@@ -1,3 +1,5 @@
+<!-- COMPONENTS/pizzas.html -->
+
 <!-- Margherita -->
 <article class="menu-item has-customize"
   data-item="margherita"
@@ -5,25 +7,25 @@
   data-description="Sauce tomate, Fior di latte"
   data-ingredients="tomate,mozzarella">
   
-  <span class="emoji">🍅</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">10,00€</span>
-      <span class="name">Margherita</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">10,00€</span>
+        <span class="name">Margherita</span>
+      </div>
+      <span class="description">Sauce tomate, Fior di latte</span>
     </div>
-    <span class="description">Sauce tomate, Fior di latte</span>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
+    </div>
   </div>
   
-  <button class="customize-btn" onclick="openPizzaModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openPizzaModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
 
 <!-- Reine -->
@@ -33,25 +35,25 @@
   data-description="Sauce tomate, Fior di latte, jambon, champignons"
   data-ingredients="tomate,mozzarella,jambon,champignons">
   
-  <span class="emoji">👑</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">12,00€</span>
-      <span class="name">Reine</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">12,00€</span>
+        <span class="name">Reine</span>
+      </div>
+      <span class="description">Jambon, champignons</span>
     </div>
-    <span class="description">Jambon, champignons</span>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
+    </div>
   </div>
   
-  <button class="customize-btn" onclick="openPizzaModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openPizzaModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
 
 <!-- 4 Saisons -->
@@ -61,25 +63,25 @@
   data-description="Sauce tomate, Fior di latte, jambon, champignons, artichauts, olives"
   data-ingredients="tomate,mozzarella,jambon,champignons,artichauts,olives">
   
-  <span class="emoji">🌿</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">13,50€</span>
-      <span class="name">4 Saisons</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">13,50€</span>
+        <span class="name">4 Saisons</span>
+      </div>
+      <span class="description">Jambon, champignons, artichauts, olives</span>
     </div>
-    <span class="description">Jambon, champignons, artichauts, olives</span>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
+    </div>
   </div>
   
-  <button class="customize-btn" onclick="openPizzaModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openPizzaModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
 
 <!-- Calzone -->
@@ -89,25 +91,25 @@
   data-description="Pizza pliée: Sauce tomate, Fior di latte, jambon, champignons, œuf"
   data-ingredients="tomate,mozzarella,jambon,champignons,oeuf">
   
-  <span class="emoji">🥟</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">14,00€</span>
-      <span class="name">Calzone</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">14,00€</span>
+        <span class="name">Calzone</span>
+      </div>
+      <span class="description">Pliée: jambon, champignons, œuf</span>
     </div>
-    <span class="description">Pliée: jambon, champignons, œuf</span>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
+    </div>
   </div>
   
-  <button class="customize-btn" onclick="openPizzaModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openPizzaModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
 
 <!-- Napolitaine -->
@@ -117,23 +119,23 @@
   data-description="Sauce tomate, Fior di latte, anchois, câpres, olives"
   data-ingredients="tomate,mozzarella,anchois,capres,olives">
   
-  <span class="emoji">🐟</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">12,50€</span>
-      <span class="name">Napolitaineautomatique</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">12,50€</span>
+        <span class="name">Napolitaine</span>
+      </div>
+      <span class="description">Anchois, câpres, olives</span>
     </div>
-    <span class="description">Anchois, câpres, olives, tout le reste pour fair un grande pizza</span>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
+    </div>
   </div>
   
-  <button class="customize-btn" onclick="openPizzaModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openPizzaModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
