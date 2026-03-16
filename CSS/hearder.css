@@ -14,14 +14,14 @@ header h1 {
   font-size: 32px;
   margin-bottom: 5px;
   color: #d63031;.
-  align:center;
+  align-items:center;
 }
 
 header p {
   font-size: 16px;
   color: #666;
   margin-bottom: 15px;
-  align:center;
+  align-items:center;
 }
 
 /* Sélecteur de table */
