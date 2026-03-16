@@ -1,0 +1,55 @@
+<!-- Modal personnalisation dessert -->
+<div id="dessertModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>
+        <span id="dessert-emoji">🍰</span>
+        <span id="dessert-name">Dessert</span>
+      </h2>
+      <span class="close" onclick="closeDessertModal()">&times;</span>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-price" id="dessert-price">5.00€</div>
+      <p class="modal-description" id="dessert-description"></p>
+
+      <!-- Suppléments desserts -->
+      <div class="modal-section">
+        <h3>➕ Suppléments</h3>
+        
+        abel class="supplement-option">
+          <input type="checkbox" id="supp-creme-fouettee" data-price="1.00">
+          <span class="supp-emoji">🍰</span>
+          <span class="supp-name">Crème fouettée</span>
+          <span class="supp-price">+1,00€</span>
+        </label>
+
+        abel class="supplement-option">
+          <input type="checkbox" id="supp-coulis-chocolat" data-price="1.00">
+          <span class="supp-emoji">🍫</span>
+          <span class="supp-name">Coulis chocolat</span>
+          <span class="supp-price">+1,00€</span>
+        </label>
+
+        abel class="supplement-option">
+          <input type="checkbox" id="supp-coulis-caramel" data-price="1.00">
+          <span class="supp-emoji">🍯</span>
+          <span class="supp-name">Coulis caramel</span>
+          <span class="supp-price">+1,00€</span>
+        </label>
+
+        abel class="supplement-option">
+          <input type="checkbox" id="supp-glace-vanille" data-price="1.50">
+          <span class="supp-emoji">🍨</span>
+          <span class="supp-name">Boule glace vanille</span>
+          <span class="supp-price">+1,50€</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeDessertModal()">Annuler</button>
+      <button class="btn-add" onclick="addDessertToCart()">✅ Ajouter au panier</button>
+    </div>
+  </div>
+</div>
