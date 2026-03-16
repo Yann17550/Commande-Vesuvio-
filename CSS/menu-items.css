@@ -15,7 +15,10 @@
 
 /* Articles menu */
 .menu-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-rows: auto auto;
+  gap: 8px 15px;
   align-items: center;
   background: rgba(255,255,255,0.95);
   margin-bottom: 15px;
@@ -39,40 +42,91 @@
   border: 3px solid #ff6b35;
 }
 
+/* Emoji - Colonne 1 */
 .emoji {
+  grid-column: 1;
+  grid-row: 1 / 3;
   font-size: 32px;
-  margin-right: 20px;
   flex-shrink: 0;
+  align-self: center;
+}
+
+/* Info pizza - Colonne 2 */
+.item-info {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Ligne 1: Prix + Nom ensemble */
+.price-name {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d63031;
 }
 
 .name {
-  flex: 1;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #333;
 }
 
-.price {
-  font-size: 22px;
-  font-weight: 700;
-  color: #d63031;
-  min-width: 70px;
-  text-align: right;
-  margin-right: 10px;
+/* Ligne 2: Description */
+.description {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
-/* Compteur quantité */
+/* Bouton personnaliser - Colonne 3, couleur discrète */
+.customize-btn {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+  background: rgba(100, 100, 100, 0.12);
+  color: #555;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.customize-btn:hover {
+  background: rgba(100, 100, 100, 0.2);
+  border-color: rgba(0,0,0,0.15);
+}
+
+.customize-btn:active {
+  transform: scale(0.95);
+}
+
+/* Compteur quantité - Colonne 4 */
 .quantity {
+  grid-column: 4;
+  grid-row: 1 / 3;
+  align-self: center;
   display: none;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: #ff6b35;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border-radius: 20px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .menu-item.selected .quantity {
@@ -80,8 +134,8 @@
 }
 
 .quantity button {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border: none;
   background: white;
   color: #ff6b35;
@@ -92,6 +146,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.quantity button:hover {
+  transform: scale(1.1);
+}
+
+.quantity button:active {
+  transform: scale(0.9);
 }
 
 .quantity span {
@@ -102,64 +165,7 @@
   text-align: center;
 }
 
-/* Info pizza (nom + description) */
-.item-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.description {
-  font-size: 13px;
-  color: #666;
-  font-weight: 400;
-}
-
-/* Bouton personnaliser pizza - CORRIGÉ */
-.customize-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: linear-gradient(135deg, #ff8c42, #ff6b35);
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  box-shadow: 0 2px 8px rgba(255,107,53,0.3);
-  transition: all 0.2s ease;
-  z-index: 10;
-}
-
-.customize-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(255,107,53,0.4);
-}
-
-.customize-btn:active {
-  transform: scale(0.95);
-}
-
-/* Spinner - Position corrigée pour éviter le chevauchement */
-.menu-item .quantity {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-}
-
-/* Ajuster le prix pour laisser de la place au spinner */
-.menu-item .price {
-  margin-right: 90px;
-}
-
 /* Carte pizza avec bouton personnaliser */
 .menu-item.has-customize {
   position: relative;
-  padding-right: 20px;
 }
