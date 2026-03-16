@@ -1,5 +1,5 @@
-/* Modal de personnalisation dessert */
-.dessert-modal {
+/* Modal de personnalisation dessert - MÊME STYLE QUE PIZZA */
+#dessertModal {
   display: none;
   position: fixed;
   top: 0;
@@ -13,11 +13,11 @@
   animation: fadeIn 0.3s ease;
 }
 
-.dessert-modal.show {
+#dessertModal.show {
   display: flex;
 }
 
-.dessert-modal-content {
+#dessertModal .modal-content {
   background: white;
   width: 100%;
   max-width: 600px;
@@ -32,8 +32,13 @@
   to { transform: translateY(0); }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Header du modal */
-.modal-header {
+#dessertModal .modal-header {
   position: sticky;
   top: 0;
   background: linear-gradient(135deg, #ff6b35, #f7931e);
@@ -44,7 +49,7 @@
   z-index: 10;
 }
 
-.modal-header h2 {
+#dessertModal .modal-header h2 {
   font-size: 26px;
   margin-bottom: 5px;
   display: flex;
@@ -52,7 +57,7 @@
   gap: 10px;
 }
 
-.modal-close {
+#dessertModal .close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -69,28 +74,29 @@
   justify-content: center;
 }
 
-.dessert-description {
+#dessertModal .modal-description {
   font-size: 14px;
   opacity: 0.95;
   margin-top: 5px;
 }
 
-.modal-price {
+#dessertModal .modal-price {
   font-size: 32px;
   font-weight: bold;
   margin-top: 10px;
+  color: white;
 }
 
 /* Corps du modal */
-.modal-body {
+#dessertModal .modal-body {
   padding: 20px;
 }
 
-.modal-section {
+#dessertModal .modal-section {
   margin-bottom: 30px;
 }
 
-.modal-section h3 {
+#dessertModal .modal-section h3 {
   font-size: 18px;
   font-weight: 700;
   color: #333;
@@ -100,61 +106,54 @@
   gap: 8px;
 }
 
-/* Suppléments desserts (checkbox) */
-.supplement-option {
+/* Suppléments desserts */
+#dessertModal .supplement-option {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px;
-  background: rgba(255,255,255,0.7);
+  padding: 15px;
+  background: #f5f5f5;
   border-radius: 12px;
   margin-bottom: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
 }
 
-.supplement-option:hover {
-  background: rgba(255,255,255,1);
-  transform: translateX(5px);
+#dessertModal .supplement-option:hover {
+  background: #e8f5e9;
 }
 
-.supplement-option input[type="checkbox"]:checked + .supp-emoji {
-  transform: scale(1.2);
+#dessertModal .supplement-option:has(input:checked) {
+  background: #e8f5e9;
+  border-color: #4caf50;
 }
 
-.supplement-option input[type="checkbox"]:checked ~ .supp-name {
-  font-weight: 700;
+#dessertModal .supplement-option input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: #4caf50;
 }
 
-.supplement-option input[type="checkbox"]:checked {
-  background: #28a745;
+#dessertModal .supp-emoji {
+  font-size: 24px;
 }
 
-.supplement-option input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  accent-color: #28a745;
-}
-
-.supp-emoji {
-  font-size: 20px;
-  transition: transform 0.2s ease;
-}
-
-.supp-name {
+#dessertModal .supp-name {
   flex: 1;
   font-weight: 500;
   color: #333;
+  font-size: 16px;
 }
 
-.supp-price {
-  font-weight: 600;
+#dessertModal .supp-price {
+  font-weight: 700;
   color: #d63031;
+  font-size: 15px;
 }
 
 /* Footer du modal */
-.modal-footer {
+#dessertModal .modal-footer {
   position: sticky;
   bottom: 0;
   background: white;
@@ -164,7 +163,7 @@
   gap: 10px;
 }
 
-.btn-add {
+#dessertModal .btn-add {
   flex: 1;
   background: linear-gradient(135deg, #28a745, #20c997);
   color: white;
@@ -181,16 +180,16 @@
   transition: all 0.2s ease;
 }
 
-.btn-add:hover {
+#dessertModal .btn-add:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
 }
 
-.btn-add:active {
+#dessertModal .btn-add:active {
   transform: translateY(0);
 }
 
-.btn-cancel {
+#dessertModal .btn-cancel {
   background: #e0e0e0;
   color: #666;
   border: none;
@@ -202,10 +201,10 @@
   transition: all 0.2s ease;
 }
 
-.btn-cancel:hover {
+#dessertModal .btn-cancel:hover {
   background: #d0d0d0;
 }
 
-.btn-cancel:active {
+#dessertModal .btn-cancel:active {
   transform: scale(0.98);
 }
