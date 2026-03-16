@@ -1,0 +1,54 @@
+<article class="menu-item" data-item="margherita" data-price="11.00">
+  <span class="emoji">🍅</span>
+  <span class="name">Margherita</span>
+  <span class="price">11€</span>
+  <div class="quantity">
+    <button class="qty-minus">−</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+</article>
+
+<article class="menu-item" data-item="reine" data-price="12.00">
+  <span class="emoji">👑</span>
+  <span class="name">Reine</span>
+  <span class="price">12€</span>
+  <div class="quantity">
+    <button class="qty-minus">−</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+</article>
+
+<article class="menu-item" data-item="4saisons" data-price="13.50">
+  <span class="emoji">🌿</span>
+  <span class="name">4 Saisons</span>
+  <span class="price">13.50€</span>
+  <div class="quantity">
+    <button class="qty-minus">−</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+</article>
+
+<article class="menu-item" data-item="calzone" data-price="14.00">
+  <span class="emoji">🌯</span>
+  <span class="name">Calzone</span>
+  <span class="price">14€</span>
+  <div class="quantity">
+    <button class="qty-minus">−</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+</article>
+
+<article class="menu-item" data-item="napolitaine" data-price="12.50">
+  <span class="emoji">🐟</span>
+  <span class="name">Napolitaine</span>
+  <span class="price">12.50€</span>
+  <div class="quantity">
+    <button class="qty-minus">−</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+</article>
