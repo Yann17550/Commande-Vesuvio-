@@ -14,6 +14,22 @@
   <link rel="stylesheet" href="./CSS/ticket.css">
   <link rel="stylesheet" href="./CSS/pizza-modal.css">
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesuvio - Commande Table</title>
+  
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/layout.css">
+  <link rel="stylesheet" href="./CSS/header.css">
+  <link rel="stylesheet" href="./CSS/tabs.css">
+  <link rel="stylesheet" href="./CSS/menu-items.css">
+  <link rel="stylesheet" href="./CSS/order-button.css">
+  <link rel="stylesheet" href="./CSS/ticket.css">
+  <link rel="stylesheet" href="./CSS/pizza-modal.css">
+  <link rel="stylesheet" href="./CSS/dessert-modal.css">
 </head>
 <body>
   <!-- Header -->
@@ -39,8 +55,11 @@
     <div class="ticket-content" id="ticketContent"></div>
   </div>
 
-  <!-- Modal Pizza (NOUVEAU) -->
+  <!-- Modal Pizza -->
   <div id="pizza-modal-container"></div>
+
+  <!-- Modal Dessert -->
+  <div id="dessert-modal-container"></div>
 
   <!-- JS séparés avec chemins corrects -->
   <script src="./JS/config.js"></script>
@@ -49,6 +68,8 @@
   <script src="./JS/order.js"></script>
   <script src="./JS/ticket.js"></script>
   <script src="./JS/pizza-modal.js"></script>
+  <script src="./JS/dessert-modal.js"></script>
+  
   <script>
     // Initialisation au chargement
     document.addEventListener('DOMContentLoaded', async function() {
@@ -58,12 +79,14 @@
       await loadComponent('boissons', './COMPONENTS/boissons.html');
       await loadComponent('desserts', './COMPONENTS/desserts.html');
       await loadComponent('pizza-modal-container', './COMPONENTS/pizza-modal.html');
+      await loadComponent('dessert-modal-container', './COMPONENTS/dessert-modal.html');
       
       // Initialiser les modules
       initTabs();
       initMenuItems();
       initOrder();
       initPizzaModal();
+      initDessertModal();
     });
 
     // Fonction pour charger composants HTML
