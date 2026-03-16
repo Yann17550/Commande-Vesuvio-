@@ -1,6 +1,6 @@
 /* Header */
 header {
-  text-align: center;
+  text-align: center;  /* ✅ Centre tout le contenu */
   padding: 20px 15px;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
@@ -14,21 +14,27 @@ header h1 {
   font-size: 32px;
   margin-bottom: 5px;
   color: #d63031;
+  text-align: center;  /* ✅ AJOUTÉ - Force le centrage */
+  margin-left: 0;      /* ✅ AJOUTÉ - Annule tout margin gauche */
+  margin-right: 0;     /* ✅ AJOUTÉ - Annule tout margin droit */
 }
 
 header p {
   font-size: 16px;
   color: #666;
   margin-bottom: 15px;
+  text-align: center;  /* ✅ AJOUTÉ - Force le centrage */
+  margin-left: 0;      /* ✅ AJOUTÉ - Annule tout margin gauche */
+  margin-right: 0;     /* ✅ AJOUTÉ - Annule tout margin droit */
 }
 
 /* Sélecteur de table */
 .table-selector {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  /* ✅ Centre le sélecteur aussi */
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 10px;        /* ✅ AJOUTÉ - Espace avec le p */
 }
 
 .table-selector label {
