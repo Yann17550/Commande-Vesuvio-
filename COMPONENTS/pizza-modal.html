@@ -80,8 +80,21 @@ t<div class="pizza-modal" id="pizzaModal">
           </div>
         </div>
       </div>
-
+      
       <!-- Section: Retirer des ingrédients -->
       <div class="option-section">
         <h3>➖ Retirer un ingrédient</h3>
-        <div class="ingredients-remove
+        <div class="ingredients-remove" id="ingredients-chips">
+          <!-- Généré dynamiquement par JS -->
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closePizzaModal()">Annuler</button>
+      <button class="btn-add-to-cart" onclick="addPizzaToCart()">
+        ✅ Ajouter au panier
+      </button>
+    </div>
+  </div>
+</div>
