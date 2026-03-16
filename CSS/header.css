@@ -1,8 +1,7 @@
 /* Header */
 header {
-  text-align: center;  /* ✅ Centre tout le contenu */
-  padding: 20px 15px;
-  background: rgba(255,255,255,0.95);
+  text-align: center;
+  background: transparent;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   position: sticky;
@@ -13,10 +12,11 @@ header {
 header h1 {
   font-size: 32px;
   margin-bottom: 5px;
-  color: #d63031;
-  text-align: center;  /* ✅ AJOUTÉ - Force le centrage */
-  margin-left: 0;      /* ✅ AJOUTÉ - Annule tout margin gauche */
-  margin-right: 0;     /* ✅ AJOUTÉ - Annule tout margin droit */
+  color: white;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 header p {
