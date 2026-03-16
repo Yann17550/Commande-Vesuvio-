@@ -1,9 +1,46 @@
 // Gestion de la modal dessert
 let currentDessertElement = null;
-// Fonction d'initialisation
 
+// Fonction d'initialisation
 function initDessertModal() {
   console.log('Modal dessert initialisée');
+  
+  // Fermer la modal en cliquant à l'extérieur
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('dessertModal');
+    if (modal && event.target === modal) {
+      closeDessertModal();
+    }
+  });
+  
+  // Ajouter les écouteurs sur les checkboxes
+  setupDessertSupplementListeners();
+}
+
+function setupDessertSupplementListeners() {
+  // Attendre que la modal soit chargée
+  setTimeout(() => {
+    const checkboxes = document.querySelectorAll('#dessertModal input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', updateDessertPrice);
+    });
+  }, 500);
+}
+
+function updateDessertPrice() {
+  if (!currentDessertElement) return;
+  
+  const basePrice = parseFloat(currentDessertElement.dataset.price);
+  let totalPrice = basePrice;
+  
+  // Calculer le total avec les suppléments cochés
+  document.querySelectorAll('#dessertModal input[type="checkbox"]:checked').forEach(cb => {
+    const suppPrice = parseFloat(cb.dataset.price);
+    totalPrice += suppPrice;
+  });
+  
+  // Mettre à jour l'affichage du prix
+  document.getElementById('dessert-price').textContent = totalPrice.toFixed(2) + '€';
 }
 
 function openDessertModal(element) {
@@ -26,12 +63,26 @@ function openDessertModal(element) {
     cb.checked = false;
   });
   
-  // Afficher la modal
-  document.getElementById('dessertModal').style.display = 'flex';
+  // Réinstaller les écouteurs pour cette instance
+  document.querySelectorAll('#dessertModal input[type="checkbox"]').forEach(checkbox => {
+    checkbox.removeEventListener('change', updateDessertPrice);
+    checkbox.addEventListener('change', updateDessertPrice);
+  });
+  
+  // Afficher la modal avec animation
+  const modal = document.getElementById('dessertModal');
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.classList.add('show');
+  }, 10);
 }
 
 function closeDessertModal() {
-  document.getElementById('dessertModal').style.display = 'none';
+  const modal = document.getElementById('dessertModal');
+  modal.classList.remove('show');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300);
   currentDessertElement = null;
 }
 
@@ -64,20 +115,10 @@ function addDessertToCart() {
   
   console.log('Dessert ajouté:', dessertItem);
   
-  // Ajouter au panier (à implémenter selon ton système)
-  // addToCart(dessertItem);
-  
   // Fermer la modal
   closeDessertModal();
   
   // Afficher un feedback visuel
-  alert(`${name} ajouté au panier!\nPrix: ${totalPrice.toFixed(2)}€`);
-}
-
-// Fermer la modal en cliquant à l'extérieur
-window.onclick = function(event) {
-  const modal = document.getElementById('dessertModal');
-  if (event.target == modal) {
-    closeDessertModal();
-  }
+  const supplementsText = supplements.length > 0 ? `\nSuppléments: ${supplements.join(', ')}` : '';
+  alert(`${name} ajouté au panier!\nPrix: ${totalPrice.toFixed(2)}€${supplementsText}`);
 }
