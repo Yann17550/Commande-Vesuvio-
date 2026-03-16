@@ -6,13 +6,14 @@
   <title>Vesuvio - Commande Table</title>
   
   <!-- CSS séparés avec chemins corrects -->
-<link rel="stylesheet" href="./CSS/reset.css">
-<link rel="stylesheet" href="./CSS/layout.css">
-<link rel="stylesheet" href="./CSS/header.css">
-<link rel="stylesheet" href="./CSS/tabs.css">
-<link rel="stylesheet" href="./CSS/menu-items.css">
-<link rel="stylesheet" href="./CSS/order-button.css">
-<link rel="stylesheet" href="./CSS/ticket.css">
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <link rel="stylesheet" href="./CSS/layout.css">
+  <link rel="stylesheet" href="./CSS/header.css">
+  <link rel="stylesheet" href="./CSS/tabs.css">
+  <link rel="stylesheet" href="./CSS/menu-items.css">
+  <link rel="stylesheet" href="./CSS/order-button.css">
+  <link rel="stylesheet" href="./CSS/ticket.css">
+  <link rel="stylesheet" href="./CSS/pizza-modal.css">
 
 </head>
 <body>
@@ -45,6 +46,7 @@
   <script src="./JS/menu-items.js"></script>
   <script src="./JS/order.js"></script>
   <script src="./JS/ticket.js"></script>
+  <script src="./JS/pizza-modal.js"></script>
   <script>
     // Initialisation au chargement
     document.addEventListener('DOMContentLoaded', async function() {
@@ -53,11 +55,13 @@
       await loadComponent('pizzas', './COMPONENTS/pizzas.html');
       await loadComponent('boissons', './COMPONENTS/boissons.html');
       await loadComponent('desserts', './COMPONENTS/desserts.html');
+      await loadComponent('pizza-modal-container', './COMPONENTS/pizza-modal.html');
       
       // Initialiser les modules
       initTabs();
       initMenuItems();
       initOrder();
+      initPizzaModal();
     });
 
     // Fonction pour charger composants HTML
