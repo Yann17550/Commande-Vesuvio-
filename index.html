@@ -6,13 +6,13 @@
   <title>Vesuvio - Commande Table</title>
   
   <!-- CSS séparés avec chemins corrects -->
-<link rel="stylesheet" href="./CSS - css/reset.css">
-<link rel="stylesheet" href="./CSS - css/layout.css">
-<link rel="stylesheet" href="./CSS - css/header.css">
-<link rel="stylesheet" href="./CSS - css/tabs.css">
-<link rel="stylesheet" href="./CSS - css/menu-items.css">
-<link rel="stylesheet" href="./CSS - css/order-button.css">
-<link rel="stylesheet" href="./CSS - css/ticket.css">
+<link rel="stylesheet" href="./CSS/reset.css">
+<link rel="stylesheet" href="./CSS/layout.css">
+<link rel="stylesheet" href="./CSS/header.css">
+<link rel="stylesheet" href="./CSS/tabs.css">
+<link rel="stylesheet" href="./CSS/menu-items.css">
+<link rel="stylesheet" href="./CSS/order-button.css">
+<link rel="stylesheet" href="./CSS/ticket.css">
 
 </head>
 <body>
@@ -40,19 +40,19 @@
   </div>
 
   <!-- JS séparés avec chemins corrects -->
-  <script src="./JS - js/config.js"></script>
-  <script src="./JS - js/tabs.js"></script>
-  <script src="./JS - js/menu-items.js"></script>
-  <script src="./JS - js/order.js"></script>
-  <script src="./JS - js/ticket.js"></script>
+  <script src="./JS/config.js"></script>
+  <script src="./JS/tabs.js"></script>
+  <script src="./JS/menu-items.js"></script>
+  <script src="./JS/order.js"></script>
+  <script src="./JS/ticket.js"></script>
   <script>
     // Initialisation au chargement
     document.addEventListener('DOMContentLoaded', async function() {
-      await loadComponent('header-container', './COMPONENTS - components/header.html');
-      await loadComponent('tabs-container', './COMPONENTS - components/tabs.html');
-      await loadComponent('pizzas', './COMPONENTS - components/pizzas.html');
-      await loadComponent('boissons', './COMPONENTS - components/boissons.html');
-      await loadComponent('desserts', './COMPONENTS - components/desserts.html');
+      await loadComponent('header-container', './COMPONENTS/header.html');
+      await loadComponent('tabs-container', './COMPONENTS/tabs.html');
+      await loadComponent('pizzas', './COMPONENTS/pizzas.html');
+      await loadComponent('boissons', './COMPONENTS/boissons.html');
+      await loadComponent('desserts', './COMPONENTS/desserts.html');
       
       // Initialiser les modules
       initTabs();
