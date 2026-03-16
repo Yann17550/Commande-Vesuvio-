@@ -15,7 +15,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Articles menu - Flexbox naturel */
+/* Articles menu */
 .menu-item {
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
   border: 2px solid #ff6b35;
 }
 
-/* Ligne principale: Prix + Nom */
+/* Ligne principale: Info + Spinner */
 .item-main {
   display: flex;
   align-items: flex-start;
@@ -58,7 +58,7 @@
   gap: 5px;
 }
 
-/* Prix + Nom sur même ligne */
+/* Prix + Nom */
 .price-name {
   display: flex;
   align-items: baseline;
@@ -87,48 +87,9 @@
   line-height: 1.4;
 }
 
-/* Ligne actions - Bouton + Spinner CÔTE À CÔTE */
-.actions-row {
-  display: none;
-  flex-direction: row;  /* ✅ HORIZONTAL */
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.menu-item.selected .actions-row {
-  display: flex;
-}
-
-/* Pour les boissons sans bouton - spinner à droite */
-.menu-item:not(.has-customize) .actions-row {
-  justify-content: flex-end;
-}
-
-/* Bouton Personnaliser - À gauche */
-.customize-btn {
-  flex: 1;
-  background: rgba(255,107,53,0.15);
-  color: #d63031;
-  border: 2px solid rgba(255,107,53,0.3);
-  padding: 12px 16px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.customize-btn:active {
-  transform: scale(0.97);
-  background: rgba(255,107,53,0.25);
-}
-
 /* Spinner VERTICAL - À droite */
 .quantity {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 4px;
@@ -136,6 +97,10 @@
   padding: 6px;
   border-radius: 12px;
   flex-shrink: 0;
+}
+
+.menu-item.selected .quantity {
+  display: flex;
 }
 
 .quantity button {
@@ -166,6 +131,36 @@
   min-width: 28px;
   text-align: center;
   padding: 4px 0;
+}
+
+/* Ligne bouton - En bas */
+.actions-row {
+  display: none;
+  margin-top: 0;
+}
+
+.menu-item.selected.has-customize .actions-row {
+  display: block;
+}
+
+/* Bouton Personnaliser */
+.customize-btn {
+  background: rgba(255,107,53,0.15);
+  color: #d63031;
+  border: 2px solid rgba(255,107,53,0.3);
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  max-width: calc(100% - 60px);
+}
+
+.customize-btn:active {
+  transform: scale(0.97);
+  background: rgba(255,107,53,0.25);
 }
 
 /* Responsive */
