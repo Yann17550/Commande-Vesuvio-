@@ -1,3 +1,5 @@
+/* CSS/menu-items.css - COMMENTAIRE DE FICHIER */
+
 /* Catégories */
 .category {
   display: none;
@@ -13,22 +15,19 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Articles menu */
+/* Articles menu - Flexbox naturel */
 .menu-item {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  grid-template-rows: auto auto;
-  gap: 8px 15px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   background: rgba(255,255,255,0.95);
   margin-bottom: 15px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: all 0.2s ease;
-  min-height: 80px;
+  transition: all 0.3s ease;
   position: relative;
+  gap: 8px;
 }
 
 .menu-item:active {
@@ -36,97 +35,69 @@
 }
 
 .menu-item.selected {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(255,107,53,0.4);
-  background: linear-gradient(135deg, #ffecd2, #ffe5d9);
-  border: 3px solid #ff6b35;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255,107,53,0.4);
+  background: linear-gradient(135deg, #fff5f0, #ffe9e0);
+  border: 2px solid #ff6b35;
+  padding-bottom: 20px;
 }
 
-/* Emoji - Colonne 1 */
-.emoji {
-  grid-column: 1;
-  grid-row: 1 / 3;
-  font-size: 32px;
-  flex-shrink: 0;
-  align-self: center;
+/* Ligne principale: Prix + Nom + Spinner */
+.item-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-/* Info pizza - Colonne 2 */
+/* Info (Prix + Nom + Description) */
 .item-info {
-  grid-column: 2;
-  grid-row: 1 / 3;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-/* Ligne 1: Prix + Nom ensemble */
+/* Prix + Nom sur même ligne */
 .price-name {
   display: flex;
   align-items: baseline;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .price {
   font-size: 20px;
   font-weight: 700;
   color: #d63031;
+  flex-shrink: 0;
 }
 
 .name {
   font-size: 18px;
   font-weight: 600;
   color: #333;
+  word-break: break-word;
 }
 
-/* Ligne 2: Description */
+/* Description */
 .description {
-  font-size: 13px;
+  font-size: 14px;
   color: #666;
-  font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
-/* Bouton personnaliser - Colonne 3, couleur discrète */
-.customize-btn {
-  grid-column: 3;
-  grid-row: 1;
-  align-self: start;
-  background: rgba(100, 100, 100, 0.12);
-  color: #555;
-  border: 1px solid rgba(0,0,0,0.08);
-  padding: 6px 12px;
-  font-size: 11px;
-  font-weight: 500;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
+/* Spinner VERTICAL - Caché par défaut */
+.quantity {
+  display: none;
+  flex-direction: column;
   align-items: center;
   gap: 4px;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.customize-btn:hover {
-  background: rgba(100, 100, 100, 0.2);
-  border-color: rgba(0,0,0,0.15);
-}
-
-.customize-btn:active {
-  transform: scale(0.95);
-}
-
-/* Compteur quantité - Colonne 4 */
-.quantity {
-  grid-column: 4;
-  grid-row: 1 / 3;
-  align-self: center;
-  display: none;
-  align-items: center;
-  gap: 8px;
   background: #ff6b35;
-  padding: 8px 12px;
-  border-radius: 20px;
+  padding: 6px;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
 .menu-item.selected .quantity {
@@ -134,14 +105,14 @@
 }
 
 .quantity button {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border: none;
   background: white;
   color: #ff6b35;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  border-radius: 50%;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -149,23 +120,57 @@
   transition: all 0.15s ease;
 }
 
-.quantity button:hover {
-  transform: scale(1.1);
-}
-
 .quantity button:active {
   transform: scale(0.9);
+  background: #f0f0f0;
 }
 
 .quantity span {
   color: white;
   font-weight: bold;
   font-size: 18px;
-  min-width: 25px;
+  min-width: 28px;
   text-align: center;
+  padding: 4px 0;
 }
 
-/* Carte pizza avec bouton personnaliser */
-.menu-item.has-customize {
-  position: relative;
+/* Bouton Personnaliser - Caché par défaut, visible après sélection */
+.customize-btn {
+  display: none;
+  background: rgba(255,107,53,0.15);
+  color: #d63031;
+  border: 2px solid rgba(255,107,53,0.3);
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.menu-item.selected.has-customize .customize-btn {
+  display: block;
+}
+
+.customize-btn:active {
+  transform: scale(0.97);
+  background: rgba(255,107,53,0.25);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .price {
+    font-size: 18px;
+  }
+  
+  .name {
+    font-size: 16px;
+  }
+  
+  .description {
+    font-size: 13px;
+  }
 }
