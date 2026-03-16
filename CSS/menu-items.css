@@ -88,7 +88,7 @@
   line-height: 1.4;
 }
 
-/* Spinner VERTICAL - Caché par défaut */
+/* Spinner VERTICAL - Aligné avec le bouton */
 .quantity {
   display: none;
   flex-direction: column;
@@ -98,6 +98,8 @@
   padding: 6px;
   border-radius: 12px;
   flex-shrink: 0;
+  margin-top: 8px;  /* ✅ Même margin que le bouton pour alignement */
+  align-self: flex-start;  /* ✅ Aligné en haut */
 }
 
 .menu-item.selected .quantity {
@@ -146,9 +148,9 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: center;
-  width: 100%;
+  flex: 1;  /* ✅ Prend l'espace disponible à gauche du spinner */
   margin-top: 8px;
+  white-space: nowrap;
 }
 
 .menu-item.selected.has-customize .customize-btn {
