@@ -48,11 +48,11 @@
   <script>
     // Initialisation au chargement
     document.addEventListener('DOMContentLoaded', async function() {
-      await loadComponent('header-container', 'COMPONENTS - components./header.html');
-      await loadComponent('tabs-container', 'COMPONENTS - components./tabs.html');
-      await loadComponent('pizzas', 'COMPONENTS - components./pizzas.html');
-      await loadComponent('boissons', 'COMPONENTS - components./boissons.html');
-      await loadComponent('desserts', 'COMPONENTS - components./desserts.html');
+      await loadComponent('header-container', './COMPONENTS - components/header.html');
+      await loadComponent('tabs-container', './COMPONENTS - components/tabs.html');
+      await loadComponent('pizzas', './COMPONENTS - components/pizzas.html');
+      await loadComponent('boissons', './COMPONENTS - components/boissons.html');
+      await loadComponent('desserts', './COMPONENTS - components/desserts.html');
       
       // Initialiser les modules
       initTabs();
