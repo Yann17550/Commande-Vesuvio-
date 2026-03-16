@@ -1,0 +1,211 @@
+/* Modal de personnalisation dessert */
+.dessert-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 3000;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.dessert-modal.show {
+  display: flex;
+}
+
+.dessert-modal-content {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  border-radius: 30px 30px 0 0;
+  overflow-y: auto;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Header du modal */
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 25px 20px;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.modal-header h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dessert-description {
+  font-size: 14px;
+  opacity: 0.95;
+  margin-top: 5px;
+}
+
+.modal-price {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Corps du modal */
+.modal-body {
+  padding: 20px;
+}
+
+.modal-section {
+  margin-bottom: 30px;
+}
+
+.modal-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Suppléments desserts (checkbox) */
+.supplement-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.supplement-option:hover {
+  background: rgba(255,255,255,1);
+  transform: translateX(5px);
+}
+
+.supplement-option input[type="checkbox"]:checked + .supp-emoji {
+  transform: scale(1.2);
+}
+
+.supplement-option input[type="checkbox"]:checked ~ .supp-name {
+  font-weight: 700;
+}
+
+.supplement-option input[type="checkbox"]:checked {
+  background: #28a745;
+}
+
+.supplement-option input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #28a745;
+}
+
+.supp-emoji {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.supp-name {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+}
+
+.supp-price {
+  font-weight: 600;
+  color: #d63031;
+}
+
+/* Footer du modal */
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 20px;
+  border-top: 2px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-add {
+  flex: 1;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #666;
+  border: none;
+  padding: 18px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background: #d0d0d0;
+}
+
+.btn-cancel:active {
+  transform: scale(0.98);
+}
