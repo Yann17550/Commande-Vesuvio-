@@ -1,27 +1,30 @@
+<!-- COMPONENTS/desserts.html -->
+
 <!-- Tiramisu -->
 <article class="menu-item has-customize"
   data-item="tiramisu"
   data-price="6.00"
   data-description="Mascarpone, café, cacao">
   
-  <span class="emoji">🍫</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">6,00€</span>
-      <span class="name">Tiramisu</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">6,00€</span>
+        <span class="name">Tiramisu</span>
+      </div>
+      <span class="description">Mascarpone, café, cacao</span>
+    </div>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
     </div>
   </div>
   
-  <button class="customize-btn" onclick="openDessertModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openDessertModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
 
 <!-- Glace vanille -->
@@ -30,24 +33,25 @@
   data-price="4.50"
   data-description="2 boules de glace artisanale">
   
-  <span class="emoji">🍨</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">4,50€</span>
-      <span class="name">Glace vanille</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">4,50€</span>
+        <span class="name">Glace vanille</span>
+      </div>
+      <span class="description">2 boules de glace artisanale</span>
+    </div>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
     </div>
   </div>
   
-  <button class="customize-btn" onclick="openDessertModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openDessertModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
 
 <!-- Fondant chocolat -->
@@ -56,24 +60,25 @@
   data-price="6.50"
   data-description="Cœur coulant, chocolat noir">
   
-  <span class="emoji">🍫</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">6,50€</span>
-      <span class="name">Fondant chocolat</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">6,50€</span>
+        <span class="name">Fondant chocolat</span>
+      </div>
+      <span class="description">Cœur coulant, chocolat noir</span>
+    </div>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
     </div>
   </div>
   
-  <button class="customize-btn" onclick="openDessertModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openDessertModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
 
 <!-- Panna cotta -->
@@ -82,22 +87,23 @@
   data-price="5.50"
   data-description="Crème italienne, fruits rouges">
   
-  <span class="emoji">🥛</span>
-  
-  <div class="item-info">
-    <div class="price-name">
-      <span class="price">5,50€</span>
-      <span class="name">Panna cotta</span>
+  <div class="item-main">
+    <div class="item-info">
+      <div class="price-name">
+        <span class="price">5,50€</span>
+        <span class="name">Panna cotta</span>
+      </div>
+      <span class="description">Crème italienne, fruits rouges</span>
+    </div>
+    
+    <div class="quantity">
+      <button class="qty-plus">+</button>
+      <span class="qty-value">1</span>
+      <button class="qty-minus">−</button>
     </div>
   </div>
   
-  <button class="customize-btn" onclick="openDessertModal(this.parentElement); event.stopPropagation();">
+  <button class="customize-btn" onclick="openDessertModal(this.closest('.menu-item')); event.stopPropagation();">
     🔧 Personnaliser
   </button>
-  
-  <div class="quantity">
-    <button class="qty-minus">−</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
 </article>
