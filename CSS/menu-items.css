@@ -109,6 +109,9 @@
   background: #ff6b35;
   padding: 6px;
   border-radius: 12px;
+  width: 25%;
+  margin-left: auto;
+  margin-right: 5%;
 }
 
 .menu-item.selected .quantity {
